@@ -98,6 +98,7 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 /* Hover effect */
@@ -232,7 +233,7 @@ body {
 .accordion-content p {
   margin: 0;
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 0.68rem;
   color: #333;
 }
 
@@ -444,7 +445,7 @@ body {
 .wedding-details h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #ffd700; /* Golden accent, adjust as needed */
+  color: #d3cba3; /* Golden accent, adjust as needed */
 }
 
 .wedding-details p {
@@ -602,9 +603,9 @@ body {
 
 .appreciation-left img {
   width: 100%;
-  max-width: 400px; /* Limit image width */
+  max-width: 300px; /* Limit image width */
   height: auto;
-  border-radius: 4px; /* Slightly round corners */
+  border-radius: 15px; /* Slightly round corners */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   transition: transform 0.3s ease; /* For optional hover effect */
 }

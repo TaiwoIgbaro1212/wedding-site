@@ -52,7 +52,9 @@
         <p class="hero-subtitle">
           Forever Starts Here: Your Love, Your Journey, Your Wedding Wonderland!
         </p>
-        <button class="hero-btn">Get Wedding Information</button>
+        <button class="hero-btn" onclick="scrollToGift()">
+          Get Wedding Information
+        </button>
       </div>
     </section>
 
@@ -74,9 +76,21 @@
               <!-- Accordion Content -->
               <div class="accordion-content">
                 <p>
-                  Orekelewa mi, I am overwhelmed with emotion. You are the
-                  masterpiece that completes my life’s canvas, the missing piece
-                  that makes me whole...
+                  Every day with you feels like a dream I never want to wake up
+                  from. You are the sweetest part of my life, the melody in my
+                  heart, and the warmth in my soul. From the moment you came
+                  into my life, everything changed for the better. Your love has
+                  given my world a new meaning, a new purpose, and a depth I
+                  never knew existed. <br />I can’t wait to spend forever with
+                  you, to build a home filled with love, laughter, and endless
+                  joy. You are my safe place, my peace, and my heart’s greatest
+                  treasure. No matter what life brings, I promise to stand by
+                  you, to love you with everything in me, and to cherish every
+                  moment we share. I love you more than words can say, more than
+                  actions can show, and more than a lifetime can hold. <br />You
+                  are my forever, my always, and my one true love. I love you
+                  more than you’ll ever know. Forever and always, my love.
+                  <br />Yours forever, <br />Taiwo
                 </p>
               </div>
             </div>
@@ -89,8 +103,24 @@
               </button>
               <div class="accordion-content">
                 <p>
-                  Zuciyata, Every day with you feels like a blessing. In your
-                  eyes, my heart finds a home...
+                  My love, my heart, my forever—every day with you is a
+                  beautiful chapter in the love story I never knew I deserved.
+                  You are my safe haven, my protector, my greatest joy. In your
+                  arms, I find peace, and in your eyes, I see the reflection of
+                  a love so deep and pure. You are not just the man of my
+                  dreams; you are the reality that makes my heart beat faster.
+                  Your love strengthens me, your words uplift me, and your
+                  presence makes my world brighter. I admire you, I cherish you,
+                  and I honor you with all my heart. <br />I can’t wait to walk
+                  down the aisle, to say “I do” to forever with you, and to
+                  build a life filled with love, laughter, and endless
+                  happiness. You are my partner, my best friend, and my
+                  soulmate. I promise to stand by you, to support you, and to
+                  love you with every breath I take. I love you more than words
+                  can express, more than actions can show, and more than a
+                  lifetime can hold. <br />You are my forever, my always, and my
+                  one true love. I love you more than you’ll ever know. Forever
+                  and always, my love. <br />Yours forever, <br />Jane
                 </p>
               </div>
             </div>
@@ -116,7 +146,7 @@
 
         <!-- Center Column: Title, Text, Button -->
         <div class="welcome-center">
-          <h2>Nakale &amp; Lewa</h2>
+          <h2>Taiwo &amp; Jane</h2>
           <p>
             Be our Guest as we begin our journey together! We’re grateful for
             your well-wishes and support.
@@ -133,7 +163,7 @@
             <a href="#"><i class="fab fa-instagram"></i></a>
           </div>
           <!-- Button -->
-          <button class="gift-btn">Send a Gift</button>
+          <button onclick="scrollToGift()" class="gift-btn">Send a Gift</button>
         </div>
 
         <!-- Right Column: Image -->
@@ -169,16 +199,14 @@
           <h3>Church Wedding</h3>
           <p>
             The Church Wedding will take place the following day, Saturday,
-            October 25th, 2025, at GOFAMINT, Satellite Assembly, located on Ondo
-            Road, Akure.
+            October 25th, 2025, at Kakuri Road.
           </p>
 
           <h3>The Reception</h3>
           <p>
             The reception will follow immediately at Goodness Hall and Events
-            Place, on Agagu Road, beside Corpus Christi College, off Ondo Road,
-            Akure. The colors chosen for these special occasions are Purple and
-            Mint.
+            Place, on Agagu Road, beside Corpus Christi College. The colors
+            chosen for these special occasions are Gold and White.
           </p>
         </div>
 
@@ -255,32 +283,21 @@
         </div>
 
         <!-- Right Column: Gift Details -->
-        <div class="appreciation-right">
+        <div id="appreciation-right" class="appreciation-right">
           <h2>We Appreciate Your Kindness</h2>
 
           <h3>Local Account</h3>
           <p>
-            Bank: Kuda <br />
-            Account Number: 2001656317 <br />
-            Account Holder: Esco Nakale
+            Bank: Palmpay <br />
+            Account Number: 8142218971 <br />
+            Account Holder: Idemudian Jane
           </p>
 
           <h3>Dollar Account</h3>
           <p>
-            Beneficiary’s Name: Nakale Nakale <br />
-            Beneficiary’s Account Number: 0620390747 <br />
-            Beneficiary’s Bank Name: Wema Bank Plc, Lagos, Nigeria
-          </p>
-
-          <h3>Wire Transfer Information</h3>
-          <p>
-            Intermediary Bank’s Name: Standard Chartered Bank, New York <br />
-            Intermediary Bank Address: 1095, Avenue of The Americas, New York,
-            NY 10036 <br />
-            Intermediary Bank SWIFT: SCBLUS33 <br />
-            Wema Bank Account Number with Intermediary: 3582-026198-003 <br />
-            Wema Bank SWIFT Code: WEMANGLA <br />
-            FED Wire: 026 002 561
+            Beneficiary’s Name: Idemudian Jane <br />
+            Beneficiary’s Account Number: 0620386447 <br />
+            Beneficiary’s Bank Name: Zenith Bank Plc, Lagos, Nigeria
           </p>
         </div>
       </div>
@@ -307,7 +324,7 @@
         <!-- Map Section -->
         <div class="map-section">
           <h2>Venue Location</h2>
-          <p>Find us at: Goodness Hall and Events Place, Agagu Road, Akure</p>
+          <p>Find us at: Goodness Hall and Events Place, Agagu Road.</p>
           <!-- Clickable Map Link -->
           <a
             class="map-link"
@@ -343,10 +360,10 @@
         <div class="qa-right">
           <div class="contact-info">
             <!-- Name with an icon (optional) -->
-            <h3><i class="fa fa-user"></i> Amoo Adekemi</h3>
+            <h3><i class="fa fa-user"></i> Ajayi Tosin</h3>
             <!-- Phone number(s) -->
-            <p><i class="fa fa-phone"></i> +2348034635421</p>
-            <p><i class="fa fa-phone"></i> +2348034635421</p>
+            <p><i class="fa fa-phone"></i> +2348034676421</p>
+            <p><i class="fa fa-phone"></i> +2348038735421</p>
           </div>
         </div>
       </div>
@@ -354,7 +371,7 @@
 
     <footer>
       <div class="footer-container">
-        <p>&copy; 2025 Nakale &amp; Lewa. All Rights Reserved.</p>
+        <p>&copy; 2025 Taiwo &amp; Jane. All Rights Reserved.</p>
         <div class="footer-social">
           <a href="#"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>

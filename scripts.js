@@ -49,7 +49,11 @@ accordionBtns.forEach((btn) => {
   });
 });
 
-
+function scrollToGift() {
+  document
+    .getElementById("appreciation-right")
+    .scrollIntoView({ behavior: "smooth" });
+}
 
 // 1. Set the target date (e.g., March 29, 2025)
 const weddingDate = new Date("October 25, 2025 00:00:00").getTime();
@@ -75,26 +79,24 @@ const countdownInterval = setInterval(() => {
   // We'll assume ~30.4375 days per month for demonstration.
   const months = Math.floor(distance / (1000 * 60 * 60 * 24 * 30.4375));
   const days = Math.floor(
-    (distance % (1000 * 60 * 60 * 24 * 30.4375)) /
-      (1000 * 60 * 60 * 24)
+    (distance % (1000 * 60 * 60 * 24 * 30.4375)) / (1000 * 60 * 60 * 24)
   );
   const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) /
-      (1000 * 60 * 60)
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
-  const minutes = Math.floor(
-    (distance % (1000 * 60 * 60)) /
-      (1000 * 60)
-  );
-  const seconds = Math.floor(
-    (distance % (1000 * 60)) /
-      1000
-  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display results
-  document.getElementById("months").innerText = String(months).padStart(2, '0');
-  document.getElementById("days").innerText = String(days).padStart(2, '0');
-  document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-  document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-  document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+  document.getElementById("months").innerText = String(months).padStart(2, "0");
+  document.getElementById("days").innerText = String(days).padStart(2, "0");
+  document.getElementById("hours").innerText = String(hours).padStart(2, "0");
+  document.getElementById("minutes").innerText = String(minutes).padStart(
+    2,
+    "0"
+  );
+  document.getElementById("seconds").innerText = String(seconds).padStart(
+    2,
+    "0"
+  );
 }, 1000);
