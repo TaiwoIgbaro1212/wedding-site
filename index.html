@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Slider</title>
+    <!-- Google Fonts Import -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Hero Slideshow Section -->
+    <section class="hero-slider">
+      <!-- Slider Container -->
+      <div class="slider">
+        <!-- Slide 1 -->
+        <div
+          class="slide active"
+          style="background-image: url('images/Couple.jpg')"
+        ></div>
+        <!-- Slide 2 -->
+        <div
+          class="slide"
+          style="background-image: url('images/couple1.jpg')"
+        ></div>
+        <!-- Slide 3 -->
+        <div
+          class="slide"
+          style="background-image: url('images/couple2.jpg')"
+        ></div>
+      </div>
+
+      <!-- Dark Overlay -->
+      <div class="hero-overlay"></div>
+
+      <!-- Hero Text Content -->
+      <div class="hero-content">
+        <h1 class="couple-name">Taiwo &amp; Jane</h1>
+        <p class="hero-subtitle">
+          Forever Starts Here: Your Love, Your Journey, Your Wedding Wonderland!
+        </p>
+        <button class="hero-btn">Get Wedding Information</button>
+      </div>
+    </section>
+
+    <section class="love-letters">
+      <div class="love-letters-container">
+        <!-- LEFT SIDE: Heading + Accordion -->
+        <div class="love-letters-left">
+          <h2>Our Love Letters</h2>
+
+          <!-- Accordion Wrapper -->
+          <div class="accordion">
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item">
+              <!-- Accordion Header -->
+              <button class="accordion-btn">
+                <span class="accordion-title">For My Love</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <!-- Accordion Content -->
+              <div class="accordion-content">
+                <p>
+                  Orekelewa mi, I am overwhelmed with emotion. You are the
+                  masterpiece that completes my life’s canvas, the missing piece
+                  that makes me whole...
+                </p>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+              <button class="accordion-btn">
+                <span class="accordion-title">For My King</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div class="accordion-content">
+                <p>
+                  Zuciyata, Every day with you feels like a blessing. In your
+                  eyes, my heart finds a home...
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- .accordion -->
+        </div>
+        <!-- .love-letters-left -->
+
+        <!-- RIGHT SIDE: Image -->
+        <div class="love-letters-right">
+          <img src="images/couple.jpg" alt="Couple" />
+        </div>
+      </div>
+      <!-- .love-letters-container -->
+    </section>
+
+    <section class="welcome-section">
+      <div class="welcome-container">
+        <!-- Left Column: Image -->
+        <div class="welcome-left">
+          <img src="images/couple left.jpg" alt="Couple Left" />
+        </div>
+
+        <!-- Center Column: Title, Text, Button -->
+        <div class="welcome-center">
+          <h2>Nakale &amp; Lewa</h2>
+          <p>
+            Be our Guest as we begin our journey together! We’re grateful for
+            your well-wishes and support.
+          </p>
+          <p>
+            If you’d like to give a gift to us as we start our new life, we’d be
+            delighted.
+          </p>
+          <!-- Social Media Links (optional) -->
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <!-- Button -->
+          <button class="gift-btn">Send a Gift</button>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="welcome-right">
+          <img src="images/couple right.jpg" alt="Couple Right" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+      <!-- Background Overlay (optional) -->
+      <div
+        class="countdown-background"
+        style="background-image: url('images/bed-frame.jpg')"
+      ></div>
+      <div class="countdown-overlay"></div>
+
+      <!-- Content Wrapper -->
+      <div class="countdown-content">
+        <h2>Counting Down to Forever</h2>
+        <p>Our Journey to 'I Do'!</p>
+
+        <!-- Wedding Details -->
+        <div class="wedding-details">
+          <h3>Traditional Wedding</h3>
+          <p>
+            The celebrations will begin with a Traditional Wedding Ceremony on
+            Friday, October 23rd, 2025, at 2:00 PM, which will be held at the
+            bride’s family residence and is strictly for family members.
+          </p>
+
+          <h3>Church Wedding</h3>
+          <p>
+            The Church Wedding will take place the following day, Saturday,
+            October 25th, 2025, at GOFAMINT, Satellite Assembly, located on Ondo
+            Road, Akure.
+          </p>
+
+          <h3>The Reception</h3>
+          <p>
+            The reception will follow immediately at Goodness Hall and Events
+            Place, on Agagu Road, beside Corpus Christi College, off Ondo Road,
+            Akure. The colors chosen for these special occasions are Purple and
+            Mint.
+          </p>
+        </div>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-timer">
+          <div class="time-box">
+            <span id="months">00</span>
+            <span>Months</span>
+          </div>
+          <div class="time-box">
+            <span id="days">00</span>
+            <span>Days</span>
+          </div>
+          <div class="time-box">
+            <span id="hours">00</span>
+            <span>Hours</span>
+          </div>
+          <div class="time-box">
+            <span id="minutes">00</span>
+            <span>Minutes</span>
+          </div>
+          <div class="time-box">
+            <span id="seconds">00</span>
+            <span>Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-gallery">
+      <h2>Our Photo Gallery</h2>
+
+      <div class="gallery-container">
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item">
+          <img src="images/Couple.jpg" alt="Photo 1" />
+          <div class="gallery-overlay">
+            <!-- Optional overlay text or icon can go here -->
+          </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item">
+          <img src="images/couple2.jpg" alt="Photo 2" />
+          <div class="gallery-overlay"></div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item">
+          <img src="images/couple left.jpg" alt="Photo 3" />
+          <div class="gallery-overlay"></div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item">
+          <img src="images/couple right.jpg" alt="Photo 4" />
+          <div class="gallery-overlay"></div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/couple1.jpg" alt="Photo 5" />
+          <div class="gallery-overlay"></div>
+        </div>
+
+        <!-- Add more items as needed -->
+      </div>
+    </section>
+
+    <section class="appreciation-section">
+      <div class="appreciation-container">
+        <!-- Left Column: Invitation Image -->
+        <div class="appreciation-left">
+          <img src="images/Gifts.jpg" alt="Wedding Invitation" />
+        </div>
+
+        <!-- Right Column: Gift Details -->
+        <div class="appreciation-right">
+          <h2>We Appreciate Your Kindness</h2>
+
+          <h3>Local Account</h3>
+          <p>
+            Bank: Kuda <br />
+            Account Number: 2001656317 <br />
+            Account Holder: Esco Nakale
+          </p>
+
+          <h3>Dollar Account</h3>
+          <p>
+            Beneficiary’s Name: Nakale Nakale <br />
+            Beneficiary’s Account Number: 0620390747 <br />
+            Beneficiary’s Bank Name: Wema Bank Plc, Lagos, Nigeria
+          </p>
+
+          <h3>Wire Transfer Information</h3>
+          <p>
+            Intermediary Bank’s Name: Standard Chartered Bank, New York <br />
+            Intermediary Bank Address: 1095, Avenue of The Americas, New York,
+            NY 10036 <br />
+            Intermediary Bank SWIFT: SCBLUS33 <br />
+            Wema Bank Account Number with Intermediary: 3582-026198-003 <br />
+            Wema Bank SWIFT Code: WEMANGLA <br />
+            FED Wire: 026 002 561
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="calendar-map-section">
+      <div class="calendar-map-container">
+        <!-- Calendar Section -->
+        <div class="calendar-section">
+          <h2>Save the Date</h2>
+          <p>
+            We can't wait to celebrate with you! Add our wedding date to your
+            calendar so you don’t miss it.
+          </p>
+          <!-- Google Calendar Link -->
+          <a
+            class="add-calendar-btn"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Taiwo+Wed+Jane+&dates=20251025T110000Z/20251025T140000Z&details=Join+us+for+our+wedding&location=Goodness+Hall+and+Events+Place+Agagu+Road+Akure"
+            target="_blank"
+          >
+            Add to Google Calendar
+          </a>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section">
+          <h2>Venue Location</h2>
+          <p>Find us at: Goodness Hall and Events Place, Agagu Road, Akure</p>
+          <!-- Clickable Map Link -->
+          <a
+            class="map-link"
+            href="https://www.google.com/maps/search/?api=1&query=Goodness+Hall+and+Events+Place+Agagu+Road+Akure"
+            target="_blank"
+          >
+            <!-- You can use a static image or an embedded map screenshot -->
+            <img src="images/map.png" alt="Map to the Venue" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="questions-assistance">
+      <div class="qa-container">
+        <!-- Left Column: Heading, Text, Image -->
+        <div class="qa-left">
+          <h2>Questions &amp; Assistance</h2>
+          <p>
+            For any inquiries regarding directions to the venues, accommodation
+            options, or additional information about the wedding celebrations,
+            please feel free to contact our wedding coordinator:
+          </p>
+          <p>#Beautyoflove25.</p>
+
+          <!-- Image (optional) -->
+          <div class="qa-image">
+            <img src="images/couple left.jpg" alt="Couple" />
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Info -->
+        <div class="qa-right">
+          <div class="contact-info">
+            <!-- Name with an icon (optional) -->
+            <h3><i class="fa fa-user"></i> Amoo Adekemi</h3>
+            <!-- Phone number(s) -->
+            <p><i class="fa fa-phone"></i> +2348034635421</p>
+            <p><i class="fa fa-phone"></i> +2348034635421</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2025 Nakale &amp; Lewa. All Rights Reserved.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- Link to external JavaScript (at the end of the body for faster load) -->
+    <script src="scripts.js"></script>
+  </body>
+</html>

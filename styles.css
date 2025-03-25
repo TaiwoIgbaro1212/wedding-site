@@ -1,0 +1,901 @@
+/* 1. Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Body Style */
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* 3. Hero Slider Container */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
+
+/* 4. Slider Wrapper */
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative; /* So slides can be absolutely positioned inside */
+}
+
+/* 5. Each Slide */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Fade effect */
+}
+
+/* The slide that is currently active (visible) */
+.slide.active {
+  opacity: 1;
+}
+
+/* 6. Overlay to Darken the Background */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* 40% black overlay */
+  z-index: 1; /* Below the text but above the slides */
+}
+
+/* 7. Hero Content (Title, Subtitle, Button) */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the content */
+  text-align: center;
+  color: #fff;
+  z-index: 2; /* Above the overlay */
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Main heading */
+.couple-name {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem; /* Adjust for your preference */
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Subtitle text */
+.hero-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+/* Call-to-action button */
+.hero-btn {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.hero-btn:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* 8. Responsive Adjustments */
+@media (max-width: 768px) {
+  .couple-name {
+    font-size: 2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* 1. Section Wrapper */
+.love-letters {
+  background-color: #fefefc;
+  padding: 40px 20px;
+}
+
+/* 2. Flex Container */
+.love-letters-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap on smaller screens */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+/* 3. Left and Right Columns */
+.love-letters-left {
+  flex: 1 1 400px; /* Grows/Shrinks, min 400px width */
+}
+.love-letters-right {
+  flex: 1 1 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 4. Image on Right Side */
+.love-letters-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px; /* Slight rounding if desired */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.love-letters-right img:hover {
+  transform: scale(1.03); /* Slight zoom on hover */
+}
+
+/* 5. Heading Style */
+.love-letters-left h2 {
+  font-family: "Playfair Display", serif; /* Example elegant font */
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .welcome-left img,
+  .welcome-right img {
+    display: none;
+  }
+}
+/* 6. Accordion Container */
+.accordion {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden; /* So border encloses all items nicely */
+}
+
+/* 7. Accordion Item */
+.accordion-item + .accordion-item {
+  border-top: 1px solid #ddd; /* Divider between items */
+}
+
+/* 8. Accordion Button */
+.accordion-btn {
+  display: flex;
+  justify-content: space-between; /* Title on left, + icon on right */
+  align-items: center;
+  width: 100%;
+  background: #fafafa;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+/* Hover effect on the button */
+.accordion-btn:hover {
+  background: #f0f0f0;
+}
+
+/* 9. Accordion Icon */
+.accordion-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.3s;
+}
+
+/* 10. Accordion Content (Hidden by default) */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #fff;
+  padding: 0 20px; /* We’ll add vertical padding dynamically */
+}
+
+/* When the accordion item is active, show the content */
+.accordion-item.active .accordion-content {
+  padding: 15px 20px; /* Now we can see the content padding */
+  max-height: 200px; /* Adjust or use something like 500px for more text */
+}
+
+/* Rotate the + icon to become - (optional style) */
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+/* 11. Paragraph in the content */
+.accordion-content p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* 1. Section Wrapper */
+.welcome-section {
+  background-color: #fefefc;
+  padding: 40px 20px;
+}
+
+/* 2. Container with Flex Layout */
+.welcome-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px; /* Spacing between columns */
+}
+
+/* 3. Left, Center, Right Columns */
+.welcome-left,
+.welcome-center,
+.welcome-right {
+  flex: 1 1 300px; /* Grows/Shrinks, min 300px width */
+}
+
+/* 4. Images */
+.welcome-left img,
+.welcome-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+/* Optional hover effect: slight zoom */
+.welcome-left img:hover,
+.welcome-right img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* 5. Center Column Content */
+.welcome-center {
+  text-align: center;
+  animation: fadeIn 1s forwards; /* Fade in for center content */
+}
+
+/* Center Column Heading */
+.welcome-center h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Center Column Paragraphs */
+.welcome-center p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Social Icons (Optional) */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.social-icons a {
+  color: #333;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #6a1b9a; /* Example hover color */
+}
+
+/* Gift Button */
+.gift-btn {
+  border: 2px solid #333;
+  background-color: transparent;
+  color: #333;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+.gift-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* 6. Keyframe Animations */
+
+/* Fade in from the left */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from the right */
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Simple Fade in for center content */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 7. Responsive Adjustments (Optional) */
+@media (max-width: 768px) {
+  .welcome-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .welcome-center {
+    order: 1; /* Show center content first if you like */
+  }
+}
+
+/* For screens 768px wide and below */
+@media (max-width: 768px) {
+  .welcome-left,
+  .welcome-right {
+    display: block; /* Ensure elements are visible for hover effects */
+  }
+}
+
+/* Countdown Section */
+.countdown-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; /* or a fixed height like 80vh if you prefer */
+  background: url("images/bed-frame.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Overlay */
+.countdown-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+  z-index: 1;
+}
+
+/* Content Wrapper */
+.countdown-content {
+  position: relative; /* So it sits above the overlay */
+  z-index: 2; /* Above the overlay */
+  max-width: 800px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Section Title */
+.countdown-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif; /* optional for an elegant look */
+}
+
+/* Subtitle */
+.countdown-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Wedding Details */
+.wedding-details {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.wedding-details h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffd700; /* Golden accent, adjust as needed */
+}
+
+.wedding-details p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Countdown Timer */
+.countdown-timer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Each Time Box */
+.time-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-box span:first-of-type {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.time-box span:last-of-type {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .countdown-content {
+    margin: 0 20px;
+  }
+  .wedding-details {
+    margin-bottom: 1.5rem;
+  }
+  .countdown-timer {
+    gap: 10px;
+  }
+  .time-box {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* 1. Section Styling */
+.photo-gallery {
+  background-color: #fefefc; /* Light background, adjust as desired */
+  padding: 40px 20px;
+}
+
+.photo-gallery h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* 2. Gallery Container (Grid) */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Explanation:
+     - auto-fill tries to fit as many 250px columns as possible
+     - 1fr means each column can stretch to fill remaining space
+  */
+  grid-gap: 20px; /* Space between gallery items */
+  margin: 0 auto;
+  max-width: 1200px; /* Constrain the gallery width on large screens */
+}
+
+/* 3. Gallery Item Positioning */
+.gallery-item {
+  position: relative; /* So the overlay can be absolutely positioned */
+  overflow: hidden; /* Ensures image/overlay won't spill out on hover */
+  border-radius: 4px; /* Slight rounding of corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* 4. Image Styling */
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* 5. Overlay (Hidden by Default) */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Example: a slight tinted overlay color. Adjust to your theme. */
+  background-color: rgba(106, 27, 154, 0.4); /* #6a1b9a at 40% opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* 6. Hover Effects */
+.gallery-item:hover img {
+  transform: scale(1.05); /* Slight zoom */
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1; /* Reveal overlay */
+}
+
+/* 7. Responsive Tweaks (Optional) */
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  .gallery-item:hover img {
+    transform: scale(1.05); /* Ensure hover effects work on smaller screens */
+  }
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1; /* Ensure overlay appears on hover */
+  }
+}
+
+/* Appreciation Section Wrapper */
+.appreciation-section {
+  background-color: #fefefc; /* Light background to match a wedding theme */
+  padding: 40px 20px;
+}
+
+/* Container for Flex Layout */
+.appreciation-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap on smaller screens */
+  gap: 20px; /* Space between columns */
+  max-width: 1200px; /* Constrain the section width on large screens */
+  margin: 0 auto; /* Center the container */
+  align-items: flex-start; /* Align items at the top (optional) */
+}
+
+/* Left Column: Invitation Image */
+.appreciation-left {
+  flex: 1 1 400px; /* Grows/Shrinks, minimum ~400px wide */
+}
+
+.appreciation-left img {
+  width: 100%;
+  max-width: 400px; /* Limit image width */
+  height: auto;
+  border-radius: 4px; /* Slightly round corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* For optional hover effect */
+}
+
+/* Optional hover effect for the image */
+.appreciation-left img:hover {
+  transform: scale(1.02);
+}
+
+/* Right Column: Gift Details */
+.appreciation-right {
+  flex: 1 1 400px; /* Similar flexible width */
+  color: #333; /* Text color */
+}
+
+.appreciation-right h2 {
+  font-family: "Playfair Display", serif; /* Example elegant font */
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6a1b9a; /* A purple accent color, adjust to your theme */
+}
+
+.appreciation-right h3 {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: "Open Sans", sans-serif; /* Example body font */
+}
+
+.appreciation-right p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .appreciation-container {
+    flex-direction: column; /* Stack columns on smaller screens */
+    align-items: center; /* Center them */
+  }
+  .appreciation-left,
+  .appreciation-right {
+    flex: none;
+    width: 100%;
+  }
+  .appreciation-right {
+    margin-top: 20px; /* Add spacing between the image and text */
+  }
+}
+/* 1. Calendar & Map Section Wrapper */
+.calendar-map-section {
+  background-color: #fefefc; /* Light wedding-themed background */
+  padding: 40px 20px;
+}
+
+/* 2. Container with Flex Layout */
+.calendar-map-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap columns on smaller screens */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+  align-items: flex-start; /* Align items at the top (optional) */
+}
+
+/* 3. Individual Columns */
+.calendar-section,
+.map-section {
+  flex: 1 1 400px; /* Grows/shrinks, min 400px wide */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* 4. Headings & Text */
+.calendar-section h2,
+.map-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #6a1b9a; /* Example accent color */
+}
+
+.calendar-section p,
+.map-section p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 5. Calendar Button */
+.add-calendar-btn {
+  display: inline-block;
+  background-color: #6a1b9a;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.add-calendar-btn:hover {
+  background-color: #5c1785; /* Darker shade on hover */
+}
+
+/* 6. Map Link & Image */
+.map-link img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Zoom effect on hover (optional) */
+.map-link img:hover {
+  transform: scale(1.03);
+}
+
+/* 7. Responsive Adjustments */
+@media (max-width: 768px) {
+  .calendar-map-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* 1. Section Wrapper */
+.questions-assistance {
+  background-color: #fefefc; /* Light background */
+  padding: 40px 20px;
+}
+
+/* 2. Flex Container */
+.qa-container {
+  display: flex;
+  flex-wrap: wrap; /* Wrap columns on smaller screens */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+}
+
+/* 3. Left Column (Text + Image) */
+.qa-left {
+  flex: 1 1 500px; /* Grows/Shrinks, min 500px wide (adjust as needed) */
+  color: #333;
+}
+
+.qa-left h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #6a1b9a; /* Example accent color */
+}
+
+.qa-left p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+  font-family: "Playfair Display", serif; /* Elegant font for a beautiful look */
+  font-weight: 200; /* Adjust font weight to make it less bold */
+  font-size: 1.1rem; /* Slightly larger font size for readability */
+  color: #2c2c2c; /* A soft purple accent color */
+  line-height: 1.8; /* Increase line height for better spacing */
+  text-align: justify; /* Align text for a clean and polished appearance */
+}
+
+/* Image Styling */
+.qa-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px; /* Spacing above the image */
+  transition: transform 0.3s ease;
+}
+.qa-image img:hover {
+  transform: scale(1.03); /* Slight zoom on hover */
+}
+
+/* 4. Right Column (Contact Info) */
+.qa-right {
+  flex: 0 0 300px; /* Fixed ~300px width (adjust as needed) */
+  background-color: #4d330a; /* Darker brown background */
+  color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex; /* To center or align content within */
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contact-info {
+  max-width: 200px;
+}
+
+/* Contact Info Heading */
+.contact-info h3 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Contact Info Paragraphs (Phone) */
+.contact-info p {
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon Style */
+.contact-info i {
+  font-size: 1.1rem;
+}
+
+/* 5. Responsive Tweaks */
+@media (max-width: 768px) {
+  .qa-container {
+    flex-direction: column;
+  }
+  .qa-right {
+    flex: none; /* Let it shrink to fit content */
+    width: 100%; /* Full width on mobile */
+    margin-top: 20px;
+  }
+}
+.qa-image img {
+  width: 100px; /* Set a very small width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* 1. Footer Styling */
+.footer-container {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* 2. Footer Links */
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* 3. Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ffd700; /* Golden accent color */
+}
+
+/* 4. Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+  .footer a {
+    margin: 0 5px;
+  }
+  .social-icons a {
+    margin: 0 5px;
+  }
+}
